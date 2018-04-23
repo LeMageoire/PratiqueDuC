@@ -2,14 +2,12 @@
 
 int main(void)
 {
-	 
-    char** a[10]; // est un tableau de 10 pointeur sur un pointeur sur char 
+    char** a[10]; // est un tableau de 10 pointeur sur un pointeur sur char    
     
-    
-    int* (*pt)(void);   // Pointeur contenant l'adresse d'une fonction sans paramètre livrant comme résultat un pointeur contenant l'adresse d'un entier 
+    int* (*pt)(void); // Pointeur contenant l'adresse d'une fonction sans paramètre livrant comme résultat un pointeur 					 contenant l'adresse d'un entier 
     double*(*b) (void); // Pointeur contenant l'adresse d'une fonction sans paramètre livrant comme résultat un pointeur contenant l'adresse d'un double
     /*
-     * 1) Règle Fonction : D(arg) est un T : (b)(void) est une fonction renvoyant un double* et dont les arguments sont de type void  
+     * 1) Règle Fonction : D(arg) est un T : (b)(void) est une fonction renvoyant un double* et dont les arguments sont de type   		void  
      * 2) (*b) : est un Pointeur sur une fonction sans paramètre livrant comme résultat un pointeur sur l'adresse d'un double 
      * 3) 
      */
@@ -29,7 +27,7 @@ int main(void)
      * 2) Règle Tableau : d est un tableau de 10 pointeur sur un entier 
      */
      
-    int (*e) [10]; // pas égale à int* PT[5];
+    int (*e) [10]; // pas égale à int* PT[5] (PT est un tableau de 5 pointeurs sur entier;
     /*
      * 1) affirmation initiale : (*e)[10] est un entier
      * 2) Règle Tableau (*e) est un tableau de 10 entier
