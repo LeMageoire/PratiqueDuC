@@ -1,0 +1,70 @@
+#include <stdio.h>
+
+int main(void)
+{
+	 
+    char** a[10]; // est un tableau de 10 pointeur sur un pointeur sur char 
+    
+    
+    int* (*pt)(void);   // Pointeur contenant l'adresse d'une fonction sans paramètre livrant comme résultat un pointeur contenant l'adresse d'un entier 
+    double*(*b) (void); // Pointeur contenant l'adresse d'une fonction sans paramètre livrant comme résultat un pointeur contenant l'adresse d'un double
+    /*
+     * 1) Règle Fonction : D(arg) est un T : (b)(void) est une fonction renvoyant un double* et dont les arguments sont de type void  
+     * 2) (*b) : est un Pointeur sur une fonction sans paramètre livrant comme résultat un pointeur sur l'adresse d'un double 
+     * 3) 
+     */
+//------------------------------------------------------------------------------
+    int* pt(void); // Fonction sans paramètre livrant un pointeur contenant l'adresse d'un entier (pour un prototype de fonction)
+    
+    double (*c) (double*); 
+    /*
+     * 1) Règle Fonction : => (*c) ets une fonction prenant l'adresse d'un double en paramètre qui te retourne un double 
+     * 2) Règle parenthèse : => (*c) est un *c
+     * 3) Règle pointeur : => c est un pointeur sur une fonction prenant l'adresse d'un double en paramètre et qui retourne un double
+     */
+    
+    int* d[10];
+    /* 
+     * 1) Affirmation Initiale : d[10] est un pointeur sur un entier
+     * 2) Règle Tableau : d est un tableau de 10 pointeur sur un entier 
+     */
+     
+    int (*e) [10]; // pas égale à int* PT[5];
+    /*
+     * 1) affirmation initiale : (*e)[10] est un entier
+     * 2) Règle Tableau (*e) est un tableau de 10 entier
+     * 3) Règle Pointeur : e est un pointeur sur un tableau de 10 entier 
+     * 4) 
+     */
+     /* Example de la théorie */
+     int (*pt(float))[5];
+     /* 
+      * correction :
+      * Fonction ayant un paramètre réel et livrant comme résultat 
+      * un pointeur contenant l'adresse d'un tableau de 5 entiers
+      */
+     /* 1) affirmation initiale : (*pt(float))[5] est un entier.
+      * 2) (*pt(float)) est un tableau de 5 entiers.
+      * 3)  *pt(float)) est un tableau de 5 entiers.
+      * 4)  
+      * 
+      */
+     
+     
+     
+    int(*(3f[5])(void))[10];
+    /*
+     * 1) affirmation initiale : (*(3f[5])(void))[10] est un entier 
+     * 2) Règle Tableau : (*(3f[5])(void)) est un tableau de 10 entiers
+     * 3) Règle Parenthèse : *(3f[5])(void) est un tableau de 10 entiers
+     * 4) Règle 
+     *
+     *   2) Règle parenthèses : (*(3f[5])(void))[10] est un *(3f[5])(void)[10]
+     * //3) Règle Pointeurs (?) : (3f[5])(void[10] est un pointeur sur un entier 
+     * 
+     * 
+     */
+    double (**g)[5];
+    
+	return 0;
+}
